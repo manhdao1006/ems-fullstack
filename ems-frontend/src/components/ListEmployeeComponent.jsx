@@ -24,7 +24,7 @@ const ListEmployeeComponent = () => {
     }
 
     function updateEmployee(id){
-        navigator(`/edit-employee/${id}`)
+        navigator(`/edit-employee/${id}`);
     }
 
     function removeEmployee(id){
@@ -36,6 +36,10 @@ const ListEmployeeComponent = () => {
         }).catch(error => {
             console.error(error);
         })
+    }
+
+    function viewEmployee(id){
+        navigator(`/view-employee/${id}`);
     }
 
   return (
@@ -65,6 +69,9 @@ const ListEmployeeComponent = () => {
                             <button className='btn btn-danger' onClick={() => removeEmployee(employee.id)}
                                 style={{marginLeft: '10px'}}
                             >Delete</button>
+                            <button className='btn btn-success' onClick={() => viewEmployee(employee.id)}
+                                style={{marginLeft: '10px'}}
+                            >View</button>
                         </td>
                     </tr>
                 )
